@@ -92,7 +92,7 @@ int main()
  
 	DumpEEPROM(device);
 
-// set NUS but and check it
+// set NUS bit and check it
 	retCount = TMP107_WriteRegister(device, TMP107_Temp_reg, 0x1);
 
 // see random number generator
@@ -105,6 +105,9 @@ srand(time(NULL));
 	}
 
 	DumpEEPROM(device);
+
+// reset NUS bit and exit
+	retCount = TMP107_WriteRegister(device, TMP107_Temp_reg, 0x00);
 
 // power off and close port
 	system("../pwroff.sh");
