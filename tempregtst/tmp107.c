@@ -220,7 +220,7 @@ void TMP107_SetAlertsasGPIO(){
 	int16_t rx[32];
 	
     // HIGH LIMIT REGISTER
-    tx[0] = TMP107_Global_bit | (0x4 << 3); //(CMD and ADD) GLOBAL WRITE
+    tx[0] = TMP107_Global_bit | (0x9 << 3); //(CMD and ADD) GLOBAL WRITE
     tx[1] = TMP107_HiLimit2_reg; //0xA4 REG POINTER
     tx[2] = 0xFC; // 0x7FFC
     tx[3] = 0x7F;
@@ -229,7 +229,7 @@ void TMP107_SetAlertsasGPIO(){
     TMP107_Transmit(tx,4);
 
     // LOW LIMIT REGISTER
-    tx[0] = TMP107_Global_bit | (0x4 << 3); //(CMD and ADD)
+    tx[0] = TMP107_Global_bit | (0x9 << 3); //(CMD and ADD)
     tx[1] = TMP107_LoLimit2_reg; //0xA5 REG POINTER
     tx[2] = 0x00; // 0x8000
     tx[3] = 0x80;
@@ -243,7 +243,7 @@ void TMP107_SetAlertsasGPIO(){
 	printf("Echo Bytes retrieved: %x\n", retcount);
 
     // HIGH LIMIT REGISTER
-    tx[0] = TMP107_Global_bit | (0x4 << 3); //(CMD and ADD) GLOBAL WRITE
+    tx[0] = TMP107_Global_bit | (0x9 << 3); //(CMD and ADD) GLOBAL WRITE
     tx[1] = TMP107_HiLimit1_reg; //0xA2 REG POINTER
     tx[2] = 0xFC; // 0x7FFC
     tx[3] = 0x7F;
@@ -252,7 +252,7 @@ void TMP107_SetAlertsasGPIO(){
     TMP107_Transmit(tx,4);
 
     // LOW LIMIT REGISTER
-    tx[0] = TMP107_Global_bit | (0x4 << 3); //(CMD and ADD)
+    tx[0] = TMP107_Global_bit | (0x9 << 3); //(CMD and ADD)
     tx[1] = TMP107_LoLimit1_reg; //0xA3 REG POINTER
     tx[2] = 0x00; // 0x8000
     tx[3] = 0x80;
